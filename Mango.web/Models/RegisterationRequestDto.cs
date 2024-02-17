@@ -1,4 +1,4 @@
-﻿namespace Mango.Sercices.AuthAPI.Models.Dto
+﻿namespace Mango.Web.Models
 {
     public class RegisterationRequestDto
     {

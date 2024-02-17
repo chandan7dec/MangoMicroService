@@ -5,6 +5,7 @@ namespace Mango.Sercices.AuthAPI.Service.IService
     public interface IAuthService
     {
         Task<string> Register(RegisterationRequestDto registerationRequestDto);
-        Task<LoginRequestDto> Login(LoginRequestDto loginRequestDto);
+        Task<LoginResponseDto> Login(LoginRequestDto loginRequestDto);
+        Task<bool> AssignRole(string email, string roleName);
     }
 }
