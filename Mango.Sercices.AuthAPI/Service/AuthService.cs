@@ -45,7 +45,7 @@ namespace Mango.Sercices.AuthAPI.Service
 
         public async Task<LoginResponseDto> Login(LoginRequestDto loginRequestDto)
         {
-            var user = _db.ApplicationUsers.FirstOrDefault(u => u.UserName.ToLower() == loginRequestDto.User.ToLower()); 
+            var user = _db.ApplicationUsers.FirstOrDefault(u => u.UserName.ToLower() == loginRequestDto.UserName.ToLower()); 
             var isValid = await _userManager.CheckPasswordAsync(user, loginRequestDto.Password);
 
             if(user == null ||  isValid == false) {

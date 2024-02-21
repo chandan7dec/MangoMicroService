@@ -18,6 +18,9 @@ namespace Mango.web.Service
         }
         public async Task<ResponseDto> SendAsync(RequestDto requestDto)
         {
+            try
+            {
+                
             HttpClient client = _httpClientFactory.CreateClient("MangoAPI");
             HttpRequestMessage message = new();
             message.Headers.Add("Accept", "application/json");
@@ -42,15 +45,14 @@ namespace Mango.web.Service
                 default: message.Method = HttpMethod.Get; break;
             }
             apiResponse = await client.SendAsync(message);
-            try
-            {
+            
                 switch (apiResponse.StatusCode)
                 {
                     case HttpStatusCode.NotFound: return new() { IsSuccess = false, Message = "Not found" };
                     case HttpStatusCode.Forbidden: return new() { IsSuccess = false, Message = "Access Denied" };
                     case HttpStatusCode.Unauthorized: return new() { IsSuccess = false, Message = "Unauthorized" };
                     case HttpStatusCode.InternalServerError: return new() { IsSuccess = false, Message = "Internal Server Error" };
-                    case HttpStatusCode.BadRequest: return new() { IsSuccess = false, Message = "Bad Request" };
+                    //case HttpStatusCode.BadRequest: return new() { IsSuccess = false, Message = "Bad Request" };
                     default:
                         {
                             var apiContent = await apiResponse.Content.ReadAsStringAsync();
