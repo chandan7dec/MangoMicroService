@@ -86,7 +86,7 @@ namespace Mango.web.Controllers
             {
                 TempData["error"] = response?.Message;
             }
-            return NotFound();
+            return View();
         }
     }
 }
