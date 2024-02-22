@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mango.Services.CouponAPI", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mango.web", "Mango.web\Mango.web.csproj", "{2B8038D3-DD0D-48CE-87BC-CA209B68953E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mango.Sercices.AuthAPI", "Mango.Sercices.AuthAPI\Mango.Sercices.AuthAPI.csproj", "{135CC55F-51C0-4323-9A15-3B80303BDE38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mango.Sercices.AuthAPI", "Mango.Sercices.AuthAPI\Mango.Sercices.AuthAPI.csproj", "{135CC55F-51C0-4323-9A15-3B80303BDE38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mango.Services.ProductAPI", "MangoProductAPI\Mango.Services.ProductAPI.csproj", "{A294B78A-611D-4D36-A255-61ECE14594C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{135CC55F-51C0-4323-9A15-3B80303BDE38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{135CC55F-51C0-4323-9A15-3B80303BDE38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{135CC55F-51C0-4323-9A15-3B80303BDE38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A294B78A-611D-4D36-A255-61ECE14594C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A294B78A-611D-4D36-A255-61ECE14594C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A294B78A-611D-4D36-A255-61ECE14594C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A294B78A-611D-4D36-A255-61ECE14594C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +49,7 @@ Global
 		{1F619829-0337-44F8-A524-5557F2AB2832} = {EF15FAE1-62D6-4E57-9350-61819D3C78A0}
 		{2B8038D3-DD0D-48CE-87BC-CA209B68953E} = {1F0023E8-C25D-4104-AA3A-AEA2079EC8CC}
 		{135CC55F-51C0-4323-9A15-3B80303BDE38} = {EF15FAE1-62D6-4E57-9350-61819D3C78A0}
+		{A294B78A-611D-4D36-A255-61ECE14594C3} = {EF15FAE1-62D6-4E57-9350-61819D3C78A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8AFD2AE0-94F7-4EB8-8795-225B78339838}
