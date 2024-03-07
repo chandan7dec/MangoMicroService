@@ -37,6 +37,7 @@ namespace Mango.web.Service
             if(requestDto.Data != null)
             { 
                 message.Content= new StringContent(JsonConvert.SerializeObject(requestDto.Data),Encoding.UTF8,"application/json");
+                //File.WriteAllText(@"c:\temp\file.txt", JsonConvert.SerializeObject(requestDto.Data));
             }
 
             HttpResponseMessage? apiResponse = null;
