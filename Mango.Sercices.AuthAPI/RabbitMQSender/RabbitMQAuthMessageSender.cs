@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
 using RabbitMQ.Client;
 using System.Text;
-using System.Text.Json.Serialization;
 
 namespace Mango.Services.AuthAPI.RabbitMQSender
 {

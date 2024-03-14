@@ -2,6 +2,7 @@ using Mango.web.Service;
 using Mango.web.Service.IService;
 using Mango.web.Utility;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +30,9 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LoginPath = "/Auth/Login";
         options.AccessDeniedPath = "/Auth/AccessDenied";
     });
+
+builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 SD.CouponAPIBase = builder.Configuration["ServiceUrls:CouponAPI"];
 SD.OrderAPIBase = builder.Configuration["ServiceUrls:OrderAPI"];

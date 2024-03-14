@@ -14,6 +14,7 @@ using Mango.Services.OrderAPI.Service.IService;
 using Mango.Services.OrderAPI.Service;
 using Mango.Services.OrderAPI.Extension;
 using Stripe;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +37,9 @@ new Uri(builder.Configuration["ServiceUrls:ProductAPI"])).AddHttpMessageHandler<
 
 
 builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(option =>
