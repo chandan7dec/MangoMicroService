@@ -1,6 +1,6 @@
 ﻿using Mango.web.Models;
 using Mango.web.Service.IService;
-using Mango.web.Utility;
+using Mango.Web.Utility;
 using Mango.Web.Models;
 
 namespace Mango.web.Service

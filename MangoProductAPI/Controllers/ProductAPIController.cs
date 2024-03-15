@@ -81,16 +81,37 @@ namespace Mango.Services.ProductAPI.Controllers
         //}
 
         [HttpPost]
-        //[Authorize(Roles = "ADMIN")]
-        public ResponseDto Post([FromBody] ProductDto ProductDto)
+        [Authorize(Roles = "ADMIN")]
+        public ResponseDto Post(ProductDto ProductDto)
         {
             try
             {
-                Product obj = _mapper.Map<Product>(ProductDto);
-                _db.Products.Add(obj);
+                Product product = _mapper.Map<Product>(ProductDto);
+                _db.Products.Add(product);
                 _db.SaveChanges();
 
-                _response.Result = _mapper.Map<ProductDto>(obj);
+                if(ProductDto.Image != null)
+                {
+                    string fileName = ProductDto.ProductId + Path.GetExtension(ProductDto.Image.FileName);
+                    string filePath = @"wwwroot\ProductImages\" + fileName;
+                    var filePathDirectory =Path.Combine(Directory.GetCurrentDirectory(), filePath);
+                    using(var fileStram = new FileStream(filePathDirectory,FileMode.Create))
+                    {
+                        ProductDto.Image.CopyTo(fileStram);
+                    }
+
+                    var baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host.Value}{HttpContext.Request.PathBase.Value}";
+                    product.ImageUrl = baseUrl + "/ProductImages/" + filePath;
+                    product.ImageLocalPath = filePath;
+                }
+                else
+                {
+                    product.ImageUrl = "https://placehold.co/600x400";
+                }
+                _db.Products.Update(product);
+                _db.SaveChanges();
+
+                _response.Result = _mapper.Map<ProductDto>(product);
             }
             catch (Exception ex)
             {

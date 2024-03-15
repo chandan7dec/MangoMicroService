@@ -1,5 +1,5 @@
 ﻿using Mango.web.Service.IService;
-using Mango.web.Utility;
+using Mango.Web.Utility;
 using Mango.Web.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;

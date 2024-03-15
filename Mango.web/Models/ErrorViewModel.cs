@@ -1,4 +1,4 @@
-namespace Mango.web.Models
+namespace Mango.Web.Models
 {
     public class ErrorViewModel
     {

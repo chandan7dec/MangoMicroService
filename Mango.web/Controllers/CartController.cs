@@ -1,6 +1,6 @@
 ﻿using Mango.web.Models;
 using Mango.web.Service.IService;
-using Mango.web.Utility;
+using Mango.Web.Utility;
 using Mango.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

@@ -63,7 +63,7 @@ if (app.Environment.IsDevelopment())
 }
 app.UseAuthentication();
 app.UseAuthorization();
-
+app.UseStaticFiles();
 app.MapControllers();
 ApplyMigration();
 app.Run();

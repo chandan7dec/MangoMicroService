@@ -1,6 +1,6 @@
 ﻿using Mango.web.Models;
 using Mango.web.Service.IService;
-using Mango.web.Utility;
+using Mango.Web.Utility;
 using Mango.Web.Models;
 
 namespace Mango.web.Service
@@ -14,7 +14,7 @@ namespace Mango.web.Service
         }
         public async Task<ResponseDto> CreateOrder(CartDto cartDto)
         {
-            return await _baseService.SendAsync(new Models.RequestDto()
+            return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = SD.ApiType.POST,
                 Data = cartDto,
@@ -24,7 +24,7 @@ namespace Mango.web.Service
 
         public  async Task<ResponseDto?> CreateStripeSession(StripeRequestDto stripeRequestDto)
         {
-            return await _baseService.SendAsync(new Models.RequestDto()
+            return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = SD.ApiType.POST,
                 Data = stripeRequestDto,
@@ -34,7 +34,7 @@ namespace Mango.web.Service
 
         public async Task<ResponseDto?> GetAllOrder(string? userId)
         {
-            return await _baseService.SendAsync(new Models.RequestDto()
+            return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = SD.ApiType.GET,
                 Url = SD.OrderAPIBase + "/api/order/GetOrders/" + userId
@@ -43,7 +43,7 @@ namespace Mango.web.Service
 
         public async Task<ResponseDto?> GetOrder(int orderId)
         {
-            return await _baseService.SendAsync(new Models.RequestDto()
+            return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = SD.ApiType.GET,
                 Url = SD.OrderAPIBase + "/api/order/GetOrder/" + orderId
@@ -52,7 +52,7 @@ namespace Mango.web.Service
 
         public async Task<ResponseDto?> UpdateOrderStatus(int orderId, string newStatus)
         {
-            return await _baseService.SendAsync(new Models.RequestDto()
+            return await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = SD.ApiType.POST,
                 Data = newStatus,
