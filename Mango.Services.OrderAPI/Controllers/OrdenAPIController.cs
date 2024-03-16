@@ -181,7 +181,7 @@ namespace Mango.Services.OrderAPI.Controllers
                 if(paymentIntent.Status == "succeeded")
                 {
                     //then payment is successfull
-                    orderHeader.PaymentIntentId = paymentIntent.Id;
+                    orderHeader.PaymentIntenntId = paymentIntent.Id;
                     orderHeader.Status = SD.Status_Approved;
                     _db.SaveChanges();
 
@@ -222,7 +222,7 @@ namespace Mango.Services.OrderAPI.Controllers
                         var options = new RefundCreateOptions
                         {
                             Reason = RefundReasons.RequestedByCustomer,
-                            PaymentIntent = orderHeader.PaymentIntentId
+                            PaymentIntent = orderHeader.PaymentIntenntId
                         };
 
                         var service = new RefundService();

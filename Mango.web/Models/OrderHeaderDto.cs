@@ -19,7 +19,7 @@ namespace Mango.Web.Models
         public string? Email { get; set; }
         public DateTime OrderTime { get; set; }
         public string? Status { get; set; }
-        public string? PaymentIntentId { get; set; }
+        public string? PaymentIntenntId { get; set; }
         public string? StripeSessionId { get; set; }
         public IEnumerable<OrderDetailsDto> OrderDetails { get; set; }
     }
